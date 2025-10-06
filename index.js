@@ -53,3 +53,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//  call btn
+
+const callCost = 20;
+let currentCoins = 100;
+
+const coinDisplays = document.getElementById('coin-count');
+const historyList = document.getElementById('call-history-list');
+
+function updateCoinDisplay(){
+    if(coinDisplays) {
+        coinDisplays.textContent = currentCoins;
+    }
+}
+
+function addToCallHistory(name, number){
+    if(!historyList) return;
+
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true
+            });
+
+    const newEntryHTML = `
+                <div class="flex justify-between items-center bg-gray-100 px-3 py-3 rounded-md">
+                    <div>
+                        <p class="font-bold text-gray-700">${name}</p>
+                        <p class="text-xs text-gray-500">${number}</p>
+                    </div>
+                    <span class="text-xs text-gray-600 font-medium">${timeString}</span>
+                </div>
+            `;
+         historyList.insertAdjacentHTML('afterbegin', newEntryHTML);
+}
+
+function handleCallClick(event){
+    const card = event.target.closest('.service-card');
+    const serviceName = card.dataset.serviceName;
+    const serviceNumber = card.dataset.serviceNumber;
+
+    if (currentCoins < callCost) {
+        alert(`Insufficient coins! You need ${callCost} coins to call ${serviceName}. You currently have: ${currentCoins} coins.`);
+        return; 
+    }
+    else{
+         alert(`Calling ${serviceName} at ${serviceNumber}...`);
+    }
+
+    currentCoins -= callCost;
+    updateCoinDisplay();
+
+    addToCallHistory(serviceName, serviceNumber);
+}
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+            updateCoinDisplay();
+            
+            const callButtons = document.querySelectorAll('.service-card .call-button'); 
+            callButtons.forEach(button => {
+                button.addEventListener('click', handleCallClick);
+            });
+
+            // Clear History
+            const clearButton = document.getElementById('clear-history-button');
+            if (clearButton) {
+                clearButton.addEventListener('click', () => {
+                    if (confirm("Are you sure you want to clear the call history?")) {
+                        historyList.innerHTML = ''; 
+                    }
+                });
+            }
+        });

@@ -30,7 +30,7 @@
             <img class="w-[30px] h-[30px]" src="./assets/heart.png" alt="Favorites Icon">
         </div>
         <div class="flex justify-center items-center space-x-1 px-6 py-2 rounded-full bg-[#41ff6b1a] ">
-            <span class="font-bold text-md">100</span>
+            <span id="coin-count" class="font-bold text-md">100</span>
             <img class="w-[30px] h-[30px]" src="./assets/coin.png" alt="">
         </div>
         <button id="navber-copy-btn" 
@@ -59,7 +59,9 @@
                
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between" 
+                    data-service-name="National Emergency Number"
+                    data-service-number="999">
                         <div>
                    <div class="flex items-center justify-between mb-2">
                     <div class="w-10 h-10 rounded-md bg-red-100 flex items-center justify-center">
@@ -79,11 +81,13 @@
                             <button class="copy-btn flex-1 py-1.5 text-xs border border-gray-300 text-gray-600 font-medium rounded-lg hover:bg-gray-50 transition flex items-center justify-center gap-3" data-number="999">
                                <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                          <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
+                          <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
                         </div>
                     </div>
 
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Police Helpline Number"
+                    data-service-number="999">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-md bg-blue-100 flex items-center justify-center">
@@ -102,11 +106,13 @@
                             <button class="copy-btn flex-1 py-1.5 text-xs border border-gray-300 text-gray-600 font-medium rounded-lg hover:bg-gray-50 transition flex items-center justify-center gap-3" data-number="999">
                                 <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                            <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
+                            <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Fire Service Number"
+                    data-service-number="999">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-md bg-red-100 flex items-center justify-center">
@@ -126,11 +132,13 @@
                             data-number="999">
                                 <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                          <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> Call</button>
+                          <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> Call</button>
                         </div>
                     </div>
 
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Ambulance Service"
+                    data-service-number="1994-999999">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-md  bg-red-100 flex items-center justify-center">
@@ -150,11 +158,13 @@
                             data-number="1994-999999">
                                 <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                           <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
+                           <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
                         </div>
                     </div>
                     
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Women & Child Helpline"
+                    data-service-number="109">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-md bg-red-100 flex items-center justify-center">
@@ -174,11 +184,13 @@
                             data-number="109">
                                 <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                            <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
+                            <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> </i> Call</button>
                         </div>
                     </div>
 
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Anti-Corruption Helpline"
+                    data-service-number="106">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
@@ -199,13 +211,15 @@
         <i class="fa-regular fa-copy"></i> Copy
     </button>
     
-    <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> 
+    <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> 
         <i class="fa-solid fa-phone"></i> Call
     </button>
 </div>
                     </div>
                     
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Electricity Helpline"
+                    data-service-number="16216">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
@@ -232,7 +246,9 @@
 </div>
                     </div>
                     
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Brac Helpline"
+                    data-service-number="16445">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-md bg-red-100 flex items-center justify-center">
@@ -252,11 +268,13 @@
                             data-number="16445">
                                 <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                            <button class="w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> Call</button>
+                            <button class="call-button w-1/2 text-white text-xs space-x-1 px-7 py-1.5 rounded-lg bg-[#00a63e]"> <i class="fa-solid fa-phone"></i> Call</button>
                         </div>
                     </div>
 
-                    <div class="bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between">
+                    <div class="service-card bg-white p-4 rounded-xl shadow-card-shadow border border-gray-100 flex flex-col justify-between"
+                    data-service-name="Bangladesh Railway Helpline"
+                    data-service-number="163">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <div class="w-10 h-10 rounded-md bg-red-100 flex items-center justify-center">
@@ -292,10 +310,10 @@
                 
                 <h3 class="text-xl font-semibold text-gray-800">Call History</h3>
             </div>
-                         <button class="text-white font-medium text-md space-x-1 px-7 py-3 rounded-full bg-[#00a63e]"> clear</button>
+                         <button id="clear-history-button" class="text-white font-medium text-md space-x-1 px-7 py-3 rounded-full bg-[#00a63e]"> clear</button>
                     </div>
                     
-                    <div class="space-y-3 text-sm">
+                    <div id="call-history-list" class="space-y-3 text-sm">
                         
                         <div class="flex justify-between items-center bg-gray-100 px-3 py-3 rounded-md">
                             <div>
